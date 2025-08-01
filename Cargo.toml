@@ -1,0 +1,20 @@
+[package]
+name = "ahvf"
+version = "0.1.0"
+edition = "2024"
+description = "Bindings for Apple Hypervisor Framework (Apple Silicon)"
+license = "MIT"
+keywords = ["apple", "hypervisor", "bindings", "macos", "apple silicon"]
+categories = ["os::macos-apis", "external-ffi-bindings"]
+
+[dependencies]
+libc = "0.2"
+bitflags = "2.9"
+
+[build-dependencies]
+bindgen = { version = "0.72", optional = true }
+cc = { version = "1.2", optional = true }
+
+[features]
+default = []
+generate-bindings = ["bindgen", "cc"]
